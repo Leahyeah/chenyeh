@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Content design</title>
+	<style type="text/css">
+		.button{
+			text-decoration: underline;
+			color: #000;
+			/*background-color: #3357ff;*/
+
+		}
+		.button:hover{
+			text-decoration: line-through;
+			/*text-decoration-color: #000;*/
+			/*background-color:#D6E0FF;*/
+		}
+
+		.active{
+			/*color: #fff;*/
+			text-decoration: overline;
+			text-decoration-color: #000;
+		}
+		
+		p {
+		font-size: 14px;
+	}
+	</style>
+	
+</head>
+<body style="overflow: scroll; margin-left: auto; margin-right: auto;">
+	<!-- Title -->
+	<div class="graphiclink" style="text-align: left; margin-top: 60px; margin-bottom: 60px; text-align: center;">
+		<H1>Content design</H1>
+	</div>
+
+	<div style="text-align: center; margin-top: 40px;">
+		
+	<p style="margin-left: auto; margin-right: auto; max-width: 920px; min-width: 300px;">
+		Content can be interactive for <span style="font-weight: bold; display: inline;">easy to learn</span>; 
+		<!-- <br> -->
+		Perception on content is the <span style="font-weight: bold; display: inline;"> part of the usability</span>; 
+		<!-- <br> -->
+		Content should be <span style="font-weight: bold; display: inline;">non-overwhelming</span>
+	</p>
+
+		<table style="width: 1160px;" align="center">
+		  
+		  <tr id="stayHover" style="align-self: center; text-align: center; height: 90px; background-color: #fff;" >
+	  		<th style="width: 33.3%;">
+	  			<span onclick="myFunctionHII()" class="button active">Case1: Hardware installation instruction</span>
+	  		</th>
+	    	<th style="width: 33.3%;">
+	    		<span onclick="myFunctionNS()" class="button">Case2: NS Service and Alarm pole</span>
+	    	</th>
+		    <th style="width: 33.3%;">
+		    	<span onclick="myFunctionEiF()" class="button">Case3: Energy in the future</span>
+		    </th>
+		  </tr>
+
+		  <th style="width: 33.3%;">
+	  			<span id="arrow1">&#x2B63;</span>
+	  		</th>
+	    	<th style="width: 33.3%;">
+	    		<span id="arrow2" style="display: none;">&#x2B63;</span>
+	    	</th>
+		    <th style="width: 33.3%;">
+		    	<span id="arrow3" style="display: none;">&#x2B63;</span>
+		    </th>
+		  </tr>
+
+		</table>
+
+		<div id="HII" style="text-align: center; margin-top: 40px;">
+			
+		</div>
+		
+		<div id="NS" style="display: none;">
+			<p>bbb</p>
+		</div>
+		
+		<div id="EiF" style="display: none;">
+			<p>ccc</p>
+		</div>
+
+		</div>
+
+	<!-- <div align="center">
+		<button onclick="myFunctionHII()" class="button">Hardware installation instruction</button>
+		<button onclick="myFunctionNS()" class="button">NS Service and Alarm pole</button>
+		<button onclick="myFunctionNS()" class="button">NS Service and Alarm pole</button>
+	</div> -->
+
+
+	<script>
+	function myFunctionHII() {
+	  var x = document.getElementById("HII");
+	  var y = document.getElementById("NS");
+	  var z = document.getElementById("EiF");
+	  var a = document.getElementById("arrow1");
+	  var b = document.getElementById("arrow2");
+	  var c = document.getElementById("arrow3");
+	  if (x.style.display === "none" && a.style.display === "none") {
+	    x.style.display = "block";
+	    y.style.display = "none";
+	    z.style.display = "none";
+	    a.style.display = "block";
+	    b.style.display = "none";
+	    c.style.display = "none";
+	  } else{
+	    x.style.display = "none";
+	    a.style.display = "none";
+		}
+	}
+	function myFunctionNS() {
+	  var x = document.getElementById("HII");
+	  var y = document.getElementById("NS");
+	  var z = document.getElementById("EiF");
+	  var a = document.getElementById("arrow1");
+	  var b = document.getElementById("arrow2");
+	  var c = document.getElementById("arrow3");
+	  if (y.style.display === "none" && b.style.display === "none") {
+	    y.style.display = "block";
+	    x.style.display = "none";
+	    z.style.display = "none";
+	    b.style.display = "block";
+	    a.style.display = "none";
+	    c.style.display = "none";
+	  } else{
+	    y.style.display = "none";
+	    b.style.display = "none";
+		}
+	}
+	function myFunctionEiF() {
+	  var x = document.getElementById("HII");
+	  var y = document.getElementById("NS");
+	  var z = document.getElementById("EiF");
+	  var a = document.getElementById("arrow1");
+	  var b = document.getElementById("arrow2");
+	  var c = document.getElementById("arrow3");
+	  if (z.style.display === "none" && c.style.display === "none") {
+	    z.style.display = "block";
+	    x.style.display = "none";
+	    y.style.display = "none";
+	    c.style.display = "block";
+	    a.style.display = "none";
+	    b.style.display = "none";
+	  } else{
+	    z.style.display = "none";
+	    c.style.display = "none";
+		}
+	}
+	</script>
+
+	<script>
+		// Add active class to the current button (highlight it)
+		var header = document.getElementById("stayHover");
+		var btns = header.getElementsByClassName("button");
+		for (var i = 0; i < btns.length; i++) {
+		  btns[i].addEventListener("click", function() {
+		  var current = document.getElementsByClassName("active");
+		  current[0].className = current[0].className.replace("active", "");
+		  this.className += " active";
+		  });
+		}
+	</script>
+</body>
+</html>
